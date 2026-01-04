@@ -1,0 +1,371 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210e071a98834db4ebe386f48dd2eab0, type: 3}
+  m_Name: StepForwardMotionGraph
+  m_EditorClassIdentifier: Assembly-CSharp::MotionActionGraph
+  serializedNodes: []
+  nodes:
+  - rid: 703558230409740432
+  - rid: 703558230409740438
+  - rid: 703558230409740482
+  - rid: 703558230409740489
+  - rid: 703558234826604660
+  - rid: 703558234826604661
+  - rid: 703558234826604662
+  - rid: 703558234826604663
+  - rid: 703558234826604665
+  edges:
+  - GUID: ed305bf1-3725-4579-ba20-5b9091412e31
+    owner: {fileID: 11400000}
+    inputNodeGUID: 1efd273e-ebbd-4760-a92a-914672462526
+    outputNodeGUID: c74b8db1-4e98-4904-b1b2-b483a853a664
+    inputFieldName: _prev
+    outputFieldName: _next
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 11052f54-1003-45ca-8b1e-f2bfb1b2403e
+    owner: {fileID: 11400000}
+    inputNodeGUID: 843e64e3-8f7f-463a-b2d2-e104725c0f70
+    outputNodeGUID: 1efd273e-ebbd-4760-a92a-914672462526
+    inputFieldName: _previous
+    outputFieldName: _trueNext
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 13254d78-cdea-4b7a-9957-bfa84d45c675
+    owner: {fileID: 11400000}
+    inputNodeGUID: b2f17cf2-950e-4bbb-bb4b-8095b3e383f3
+    outputNodeGUID: 843e64e3-8f7f-463a-b2d2-e104725c0f70
+    inputFieldName: _previous
+    outputFieldName: _next
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: f0b5b1ea-60e9-4d23-90db-17c72f7d2484
+    owner: {fileID: 11400000}
+    inputNodeGUID: c8dedb2d-805c-47c9-b9e1-0df8657da1a7
+    outputNodeGUID: 1efd273e-ebbd-4760-a92a-914672462526
+    inputFieldName: _previous
+    outputFieldName: _falseNext
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: d7ae6363-10a1-432d-86ea-d570f860d30f
+    owner: {fileID: 11400000}
+    inputNodeGUID: a9e70aac-b216-480b-8d17-19e68148aa19
+    outputNodeGUID: c8dedb2d-805c-47c9-b9e1-0df8657da1a7
+    inputFieldName: _previous
+    outputFieldName: _next
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 93233671-97f4-443a-8474-d838f7e7ea8a
+    owner: {fileID: 11400000}
+    inputNodeGUID: 845c03d2-9b36-44cd-b80f-5241c2b9ee88
+    outputNodeGUID: 1efd273e-ebbd-4760-a92a-914672462526
+    inputFieldName: _previous
+    outputFieldName: _anyNext
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: c78be7ed-b247-4944-9231-76594bade8a6
+    owner: {fileID: 11400000}
+    inputNodeGUID: 0caa6658-dc33-4a44-9b18-2e0d1bcea3bb
+    outputNodeGUID: b2f17cf2-950e-4bbb-bb4b-8095b3e383f3
+    inputFieldName: _previous
+    outputFieldName: _next
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  - GUID: 482f14b0-1da2-4531-924b-493937504297
+    owner: {fileID: 11400000}
+    inputNodeGUID: f1ffc050-74d4-40c4-9dd5-2c3fbaf9edfc
+    outputNodeGUID: a9e70aac-b216-480b-8d17-19e68148aa19
+    inputFieldName: _previous
+    outputFieldName: _next
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements: []
+  exposedParameters: []
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: -516, y: 368.8, z: 0}
+  scale: {x: 1, y: 1, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 703558230409740432
+      type: {class: StartMotionNode, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: c74b8db1-4e98-4904-b1b2-b483a853a664
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 227.02458
+          y: -264.8
+          width: 148.00002
+          height: 92.79999
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        _name: 
+    - rid: 703558230409740438
+      type: {class: ExecuteActionOfCharacterMotionNode, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: a9e70aac-b216-480b-8d17-19e68148aa19
+        computeOrder: 3
+        position:
+          serializedVersion: 2
+          x: 1390.4003
+          y: -103.2
+          width: 264.79993
+          height: 204.8
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _actions:
+        - rid: 703558230409740460
+        - rid: 703558234826604624
+    - rid: 703558230409740460
+      type: {class: CharacterChangeIdleAnimationAction, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        _animationClip: {fileID: 7400000, guid: 75e15e7c9786ba24fa84d0e01f991cdb, type: 2}
+    - rid: 703558230409740482
+      type: {class: CharacterConditionMotionNode, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 1efd273e-ebbd-4760-a92a-914672462526
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 473.7043
+          y: -264.8
+          width: 224.00003
+          height: 201.59999
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _condition:
+          rid: 703558230409740488
+    - rid: 703558230409740488
+      type: {class: CharacterFeetPlacementCondition, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        _invert: 0
+        _targetFeetPlacement: 1
+    - rid: 703558230409740489
+      type: {class: ExecuteActionOfCharacterMotionNode, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: b2f17cf2-950e-4bbb-bb4b-8095b3e383f3
+        computeOrder: 5
+        position:
+          serializedVersion: 2
+          x: 1390.4
+          y: -366.4
+          width: 264.79993
+          height: 112.8
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _actions:
+        - rid: 703558230409740490
+        - rid: 703558234826604625
+    - rid: 703558230409740490
+      type: {class: CharacterChangeIdleAnimationAction, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        _animationClip: {fileID: -203655887218126122, guid: 4a9a4a624f72305458a38cc9cfa81a0f, type: 3}
+    - rid: 703558234826604624
+      type: {class: CharacterSetFeetPlacementState, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        _newFeetState: 1
+    - rid: 703558234826604625
+      type: {class: CharacterSetFeetPlacementState, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        _newFeetState: 2
+    - rid: 703558234826604660
+      type: {class: PlayMotionContinuousNode, ns: CoolAnimation.ContinuousNodes, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 843e64e3-8f7f-463a-b2d2-e104725c0f70
+        computeOrder: 4
+        position:
+          serializedVersion: 2
+          x: 849.0002
+          y: -366.4
+          width: 280.00006
+          height: 147.2
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _motionClip: {fileID: 6016072765218545851, guid: 45643968629388c41bf5e39e99e4e714, type: 3}
+        _duration: 0
+        _setDurationBasedOnClip: 1
+    - rid: 703558234826604661
+      type: {class: PlayMotionContinuousNode, ns: CoolAnimation.ContinuousNodes, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: c8dedb2d-805c-47c9-b9e1-0df8657da1a7
+        computeOrder: 2
+        position:
+          serializedVersion: 2
+          x: 848.80005
+          y: -103.2
+          width: 226.39996
+          height: 148
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _motionClip: {fileID: 6016072765218545851, guid: 73c11231e1227714d99fad26de4c61f8, type: 3}
+        _duration: 0
+        _setDurationBasedOnClip: 1
+    - rid: 703558234826604662
+      type: {class: BlendPlayableComponentWeights, ns: CoolAnimation.ContinuousNodes, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 845c03d2-9b36-44cd-b80f-5241c2b9ee88
+        computeOrder: 6
+        position:
+          serializedVersion: 2
+          x: 848.8
+          y: 101.600006
+          width: 235.20001
+          height: 148
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _targetWeights:
+        - ComponentWeightType: 0
+          Weight: 0
+        - ComponentWeightType: 1
+          Weight: 1
+        _duration: 0.2
+        _curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 703558234826604663
+      type: {class: BlendPlayableComponentWeights, ns: CoolAnimation.ContinuousNodes, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: 0caa6658-dc33-4a44-9b18-2e0d1bcea3bb
+        computeOrder: 7
+        position:
+          serializedVersion: 2
+          x: 1876.3204
+          y: -348.44
+          width: 288.80005
+          height: 285.6
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _targetWeights:
+        - ComponentWeightType: 1
+          Weight: 0
+        - ComponentWeightType: 0
+          Weight: 1
+        _duration: 0.2
+        _curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+    - rid: 703558234826604665
+      type: {class: BlendPlayableComponentWeights, ns: CoolAnimation.ContinuousNodes, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: f1ffc050-74d4-40c4-9dd5-2c3fbaf9edfc
+        computeOrder: 8
+        position:
+          serializedVersion: 2
+          x: 1876.8004
+          y: -41.200027
+          width: 288
+          height: 285.6
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _targetWeights:
+        - ComponentWeightType: 0
+          Weight: 1
+        - ComponentWeightType: 1
+          Weight: 0
+        _duration: 0.2
+        _curve:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 1
+            outSlope: 1
+            tangentMode: 34
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4

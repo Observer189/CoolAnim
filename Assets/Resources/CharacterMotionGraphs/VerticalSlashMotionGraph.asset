@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210e071a98834db4ebe386f48dd2eab0, type: 3}
+  m_Name: VerticalSlashMotionGraph
+  m_EditorClassIdentifier: Assembly-CSharp::MotionActionGraph
+  serializedNodes: []
+  nodes:
+  - rid: 703558230409740432
+  - rid: 703558230409740438
+  edges:
+  - GUID: bacb02e0-0e16-4f70-a5f8-67d6bbe81fe8
+    owner: {fileID: 11400000}
+    inputNodeGUID: a9e70aac-b216-480b-8d17-19e68148aa19
+    outputNodeGUID: c74b8db1-4e98-4904-b1b2-b483a853a664
+    inputFieldName: _previous
+    outputFieldName: _next
+    inputPortIdentifier: 
+    outputPortIdentifier: 
+  groups: []
+  stackNodes: []
+  pinnedElements: []
+  exposedParameters: []
+  serializedParameterList: []
+  stickyNotes: []
+  nodeInspectorReference: {fileID: 0}
+  position: {x: -428, y: 439.2, z: 0}
+  scale: {x: 1.3225, y: 1.3225, z: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 703558230409740432
+      type: {class: StartMotionNode, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: c74b8db1-4e98-4904-b1b2-b483a853a664
+        computeOrder: 0
+        position:
+          serializedVersion: 2
+          x: 380.52176
+          y: -24.800005
+          width: 148
+          height: 92.8
+        expanded: 0
+        debug: 0
+        nodeLock: 0
+        _name: 
+    - rid: 703558230409740438
+      type: {class: ExecuteActionOfCharacterMotionNode, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        nodeCustomName: 
+        GUID: a9e70aac-b216-480b-8d17-19e68148aa19
+        computeOrder: 1
+        position:
+          serializedVersion: 2
+          x: 653.3913
+          y: -58.643482
+          width: 264.80005
+          height: 133.6
+        expanded: 1
+        debug: 0
+        nodeLock: 0
+        _name: 
+        _actions:
+        - rid: 703558230409740459
+    - rid: 703558230409740459
+      type: {class: CharacterChangeIdleAnimationAction, ns: CoolAnimation, asm: Assembly-CSharp}
+      data:
+        _animationClip: {fileID: -203655887218126122, guid: 8b9410bdc327ef542b511d57aaf4942a, type: 3}
