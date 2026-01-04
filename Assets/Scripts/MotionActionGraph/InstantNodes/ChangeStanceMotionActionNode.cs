@@ -1,18 +1,18 @@
-using System;
-using GraphProcessor;
-using UnityEngine;
+﻿using System;
 
-[Serializable, NodeMenuItem("Actions/ChangeStance")]
-public class ChangeStanceMotionActionNode : MotionActionNode
+namespace CoolAnimation
 {
-    
-    public override BaseMotionNodeExecutable CreateExecutable()
+    [Serializable, CreateNodeMenu("Actions/ChangeStance")]
+    public class ChangeStanceMotionActionNode : MotionActionNode
     {
-        return new ChangeStanceMotionInstantActionNodeExecutable();
+        public override BaseMotionNodeExecutable CreateExecutable()
+        {
+            return new ChangeStanceMotionInstantActionNodeExecutable();
+        }
     }
-}
 
-public class ChangeStanceMotionInstantActionNodeExecutable : BaseMotionNodeExecutable
-{
+    public class ChangeStanceMotionInstantActionNodeExecutable : BaseMotionNodeExecutable
+    {
     
+    }
 }

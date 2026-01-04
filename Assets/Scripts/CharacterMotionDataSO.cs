@@ -20,9 +20,9 @@ namespace CoolAnimation
 
         [SerializeReference, SubclassSelector] private IActionOfCharacter[] _actions;
 
-        [SerializeField] private CharacterMotionGraphNew _motionGraph;
+        [SerializeField] private CharacterMotionGraph _motionGraph;
 
-        public CharacterMotionGraphNew MotionGraph => _motionGraph;
+        public CharacterMotionGraph MotionGraph => _motionGraph;
 
         public CharacterMotion CreateMotion()
         {

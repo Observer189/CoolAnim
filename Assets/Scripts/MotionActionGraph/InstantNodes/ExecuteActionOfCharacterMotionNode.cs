@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using GraphProcessor;
+using CoolAnimation;
 using UnityEngine;
 
-namespace CoolAnimation
+namespace MotionActionGraphNew
 {
-    [Serializable, NodeMenuItem("Actions/ExecuteActionOnOwner")]
+    [Serializable, CreateNodeMenu("Actions/ExecuteActionOnOwner"), NodeWidth(400)]
     public class ExecuteActionOfCharacterMotionNode : MotionActionNode
     {
         [SerializeReference, SubclassSelector] public IActionOfCharacter[] _actions;
@@ -20,7 +20,7 @@ namespace CoolAnimation
             return new ExecuteActionOfCharacterMotionNodeExecutable(dupActions);
         }
     }
-
+    
     public class ExecuteActionOfCharacterMotionNodeExecutable : BaseMotionNodeExecutable
     {
         protected List<IActionOfCharacter> _actions;

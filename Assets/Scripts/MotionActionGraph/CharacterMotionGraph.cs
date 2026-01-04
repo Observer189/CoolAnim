@@ -1,12 +1,11 @@
-using GraphProcessor;
-using UnityEngine;
+﻿using UnityEngine;
+using XNode;
 
 namespace CoolAnimation
 {
-    
-    [CreateAssetMenu(fileName = "MotionActionGraph", menuName = "GameData/MotionGraph")]
-    public class CharacterMotionGraph : BaseGraph
+    [CreateAssetMenu(fileName = "MotionActionGraph", menuName = "GameData/MotionGraphNew")]
+    public class CharacterMotionGraph : NodeGraph
     {
-
+        
     }
 }

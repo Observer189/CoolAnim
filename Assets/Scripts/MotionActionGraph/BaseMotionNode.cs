@@ -1,16 +1,18 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using CoolAnimation;
-using GraphProcessor;
 using UnityEngine;
+using XNode;
 
-[Serializable]
-public abstract class BaseMotionNode : BaseNode
+namespace CoolAnimation
 {
+    [Serializable]
+    public abstract class BaseMotionNode : Node
+    {
+        [SerializeField] protected string _name;
 
-    [SerializeField] protected string _name;
-
-    public abstract BaseMotionNodeExecutable CreateExecutable();
+        public abstract BaseMotionNodeExecutable CreateExecutable();
+    }
 }
 
 public abstract class BaseMotionNodeExecutable
@@ -55,9 +57,14 @@ public abstract class BaseMotionNodeExecutable
         Dictionary<BaseMotionNode, BaseMotionNodeExecutable> templateAssociations)
     {
         _parents = new List<BaseMotionNodeExecutable>();
-        foreach (var inputNode in ownTemplate.GetInputNodes())
+        foreach (var inputPort in ownTemplate.Inputs)
         {
-            if (inputNode is BaseMotionNode inputMotionNode)
+            if (!inputPort.IsConnected)
+            {
+                continue;
+            }
+            
+            if (inputPort.Connection.node is BaseMotionNode inputMotionNode)
             {
                 if (templateAssociations.TryGetValue(inputMotionNode, out var inputNodeExec))
                 {
@@ -67,9 +74,14 @@ public abstract class BaseMotionNodeExecutable
         }
 
         _children = new List<BaseMotionNodeExecutable>();
-        foreach (var outputNode in ownTemplate.GetOutputNodes())
+        foreach (var outputPort in ownTemplate.Outputs)
         {
-            if (outputNode is BaseMotionNode inputMotionNode)
+            if (!outputPort.IsConnected)
+            {
+                continue;
+            }
+
+            if (outputPort.Connection.node is BaseMotionNode inputMotionNode)
             {
                 if (templateAssociations.TryGetValue(inputMotionNode, out var outputNodeExec))
                 {

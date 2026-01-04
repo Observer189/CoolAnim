@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CoolAnimation.InstantNodes;
 using UnityEngine;
 
 namespace CoolAnimation

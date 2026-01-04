@@ -1,13 +1,13 @@
 ﻿using System;
-using GraphProcessor;
 using UnityEngine;
+using XNode;
 
-namespace CoolAnimation.ContinuousNodes
+namespace CoolAnimation
 {
-    [Serializable, NodeMenuItem("ContinuousActions/BlendPlayableComponents")]
-    public class BlendPlayableComponentWeights : MotionActionNode
+    [Serializable, CreateNodeMenu("ContinuousActions/BlendPlayableComponents")]
+    public class BlendPlayableComponentWeightsNode : MotionActionNode
     {
-        [SerializeField] private BlendPlayableComponentData[] _targetWeights;
+        [SerializeField] private BlendPlayableComponentDataNew[] _targetWeights;
         [SerializeField] private float _duration;
         [SerializeField] private AnimationCurve _curve;
         
@@ -16,15 +16,15 @@ namespace CoolAnimation.ContinuousNodes
             return new BlendPlayableComponentWeightsExecutable(_targetWeights, _duration, _curve);
         }
     }
-
+    
     public class BlendPlayableComponentWeightsExecutable : MotionContinuousActionNodeExecutable
     {
         private float[] _sourceWeights;
-        private BlendPlayableComponentData[] _targetWeights; 
+        private BlendPlayableComponentDataNew[] _targetWeights; 
         private float _duration;
         private AnimationCurve _curve;
 
-        public BlendPlayableComponentWeightsExecutable(BlendPlayableComponentData[] targetWeights, 
+        public BlendPlayableComponentWeightsExecutable(BlendPlayableComponentDataNew[] targetWeights, 
             float duration, AnimationCurve curve)
         {
             _targetWeights = targetWeights;
@@ -76,7 +76,7 @@ namespace CoolAnimation.ContinuousNodes
     }
 
     [Serializable]
-    public class BlendPlayableComponentData
+    public class BlendPlayableComponentDataNew
     {
         public PlayableGraphComponentWeightType ComponentWeightType;
         public float Weight;

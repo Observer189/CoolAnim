@@ -1,10 +1,10 @@
 ﻿using System;
-using GraphProcessor;
 using UnityEngine;
+using XNode;
 
-namespace CoolAnimation.ContinuousNodes
+namespace CoolAnimation
 {
-    [Serializable, NodeMenuItem("ContinuousActions/PlayMotion")]
+    [Serializable, CreateNodeMenu("ContinuousActions/PlayMotion")]
     public class PlayMotionContinuousNode : MotionActionNode
     {
         [SerializeField] private AnimationClip _motionClip;
@@ -15,7 +15,7 @@ namespace CoolAnimation.ContinuousNodes
             return new PlayMotionContinuousNodeExecutable(_motionClip, _duration, _setDurationBasedOnClip);
         }
     }
-
+    
     public class PlayMotionContinuousNodeExecutable : MotionContinuousActionNodeExecutable
     {
         private AnimationClip _motionClip;

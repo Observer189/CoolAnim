@@ -9,16 +9,16 @@ namespace CoolAnimation
     {
         private CharacterMotionGraphExecutionContext _executionContext = new CharacterMotionGraphExecutionContext();
 
-        private Dictionary<CharacterMotionGraphNew, CharacterMotionGraphExecutableNew> _graphCache = new Dictionary<CharacterMotionGraphNew, CharacterMotionGraphExecutableNew>();
+        private Dictionary<CharacterMotionGraph, CharacterMotionGraphExecutable> _graphCache = new Dictionary<CharacterMotionGraph, CharacterMotionGraphExecutable>();
 
         public void Initialize(CharacterMotionController motionOwner)
         {
             _executionContext.Initialize(motionOwner);
         }
 
-        public IEnumerator ExecuteMotionGraph(CharacterMotionGraphNew graph)
+        public IEnumerator ExecuteMotionGraph(CharacterMotionGraph graph)
         {
-            CharacterMotionGraphExecutableNew graphExecutable = null;
+            CharacterMotionGraphExecutable graphExecutable = null;
 
             if (_graphCache.TryGetValue(graph, out var executable))
             {
@@ -40,9 +40,9 @@ namespace CoolAnimation
             }
         }
 
-        public CharacterMotionGraphExecutableNew CompileGraph(CharacterMotionGraphNew graph)
+        public CharacterMotionGraphExecutable CompileGraph(CharacterMotionGraph graph)
         {
-            CharacterMotionGraphExecutableNew graphExecutable = new CharacterMotionGraphExecutableNew();
+            CharacterMotionGraphExecutable graphExecutable = new CharacterMotionGraphExecutable();
             
             graphExecutable.BuildFromTemplate(graph);
 

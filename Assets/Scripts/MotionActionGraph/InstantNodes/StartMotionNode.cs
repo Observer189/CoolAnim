@@ -2,13 +2,14 @@
 using GraphProcessor;
 using UnityEngine;
 
-namespace CoolAnimation
+namespace CoolAnimation.InstantNodes
 {
-    [Serializable, NodeMenuItem("StartNode")]
+    [Serializable, CreateNodeMenu("StartNode")]
     public class StartMotionNode : BaseMotionNode
     {
-        [Output(name = "Next", allowMultiple = true), SerializeField]
+        [Output(connectionType = ConnectionType.Multiple, typeConstraint = TypeConstraint.Inherited), SerializeField]
         protected BaseMotionNode _next;
+        
         public override BaseMotionNodeExecutable CreateExecutable()
         {
             return new StartMotionNodeExecutable();
@@ -19,4 +20,5 @@ namespace CoolAnimation
     {
         
     }
+
 }

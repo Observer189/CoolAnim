@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using GraphProcessor;
+using CoolAnimation;
 using UnityEngine;
+using XNode;
 
-namespace CoolAnimation
+namespace MotionActionGraphNew.InstantNodes
 {
-    [Serializable, NodeMenuItem("Conditions/CharacterCondition")]
+    [Serializable, CreateNodeMenu("Conditions/CharacterCondition"), NodeWidth(400)]
     public class CharacterConditionMotionNode : BaseMotionNode
     {
-        [Output(name = "True", allowMultiple = true), SerializeField]
+        [Output(connectionType = ConnectionType.Multiple, typeConstraint = TypeConstraint.Inherited), SerializeField]
         public BaseMotionNode _trueNext;
-        [Output(name = "False", allowMultiple = true), SerializeField]
+        [Output(connectionType = ConnectionType.Multiple, typeConstraint = TypeConstraint.Inherited), SerializeField]
         public BaseMotionNode _falseNext;
-        [Output(name = "Any", allowMultiple = true), SerializeField]
+        [Output(connectionType = ConnectionType.Multiple, typeConstraint = TypeConstraint.Inherited), SerializeField]
         public BaseMotionNode _anyNext;
         
-        [Input(name = "Prev", allowMultiple = true), SerializeField]
+        [Input(connectionType = ConnectionType.Multiple, typeConstraint = TypeConstraint.Inherited), SerializeField]
         protected BaseMotionNode _prev;
         
         [SerializeReference, SubclassSelector] public IConditionOfCharacter _condition;
@@ -47,9 +48,9 @@ namespace CoolAnimation
             base.CreateConnections(ownTemplate, templateAssociations);
 
 
-            var truePort = ownTemplate.GetPort("_trueNext", null);
-            var falsePort = ownTemplate.GetPort("_falseNext", null);
-            var anyPort = ownTemplate.GetPort("_anyNext", null);
+            var truePort = ownTemplate.GetPort("_trueNext");
+            var falsePort = ownTemplate.GetPort("_falseNext");
+            var anyPort = ownTemplate.GetPort("_anyNext");
 
             FillNextNodesByPort(_nextTrueNodes, truePort, templateAssociations);
             FillNextNodesByPort(_nextFalseNodes, falsePort, templateAssociations);
@@ -59,9 +60,9 @@ namespace CoolAnimation
         private void FillNextNodesByPort(List<BaseMotionNodeExecutable> listToFill, NodePort port,
             Dictionary<BaseMotionNode, BaseMotionNodeExecutable> templateAssociations)
         {
-            foreach (var edge in port.GetEdges())
+            foreach (var nodePort in port.GetConnections())
             {
-                if (edge.inputNode is BaseMotionNode motionNode)
+                if (nodePort.node is BaseMotionNode motionNode)
                 {
                     if (templateAssociations.TryGetValue(motionNode, out var motionNodeExecutable))
                     {
@@ -74,7 +75,7 @@ namespace CoolAnimation
                 }
                 else
                 {
-                    Debug.LogError($"Serialized edge has wrong output node type = {edge.outputNode.GetType()}");
+                    Debug.LogError($"Serialized edge has wrong output node type = {nodePort.node.GetType()}");
                 }
             }
         }
